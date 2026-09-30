@@ -206,4 +206,5 @@ export const sideProject = {
   status: "Free open beta",
   summary:
     "A meal-planning web app that turns what's in your freezer into dinner plans and shopping lists.",
+  href: "https://stirwise.app/",
 } as const

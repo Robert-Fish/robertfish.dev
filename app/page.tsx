@@ -185,6 +185,22 @@ export default function HomePage() {
             <p className="mt-2 leading-relaxed text-muted-foreground">
               {sideProject.summary}
             </p>
+            <Button
+              nativeButton={false}
+              variant="outline"
+              size="lg"
+              className="mt-5 h-10 rounded-lg px-4"
+              render={
+                <a
+                  href={sideProject.href}
+                  target="_blank"
+                  rel="noopener"
+                />
+              }
+            >
+              Try Stirwise, free open beta
+              <span className="sr-only"> (opens in a new tab)</span>
+            </Button>
           </article>
         </div>
       </section>
