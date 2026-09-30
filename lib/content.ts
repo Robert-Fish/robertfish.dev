@@ -1,8 +1,11 @@
+// One-line switch when the domain is registered: set this to https://robertfish.dev (canonical becomes https://robertfish.dev/).
+export const SITE_URL = "https://robertfish-dev.vercel.app"
+
 export const site = {
   name: "Robert Fish",
   title: "Full Stack Engineer",
-  origin: "https://robertfish.dev",
-  canonical: "https://robertfish.dev/",
+  origin: SITE_URL,
+  canonical: `${SITE_URL}/`,
   positioning:
     "Full Stack Engineer, leading internal engineering at The BUSY Group.",
   line: "Platform and delivery. Ex-Domino's, B2B payments. .NET and Kafka.",
