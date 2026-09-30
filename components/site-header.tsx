@@ -9,21 +9,21 @@ const links = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-20 border-b border-border/80 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex w-full max-w-3xl items-center justify-between gap-4 px-5 py-3 sm:px-6">
+    <header className="sticky top-0 z-20 border-b border-border bg-background/80 backdrop-blur-md">
+      <div className="shell flex items-center justify-between gap-4 py-3">
         <Link
           href="/"
-          className="font-serif text-lg tracking-wide text-gold focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+          className="text-sm font-medium tracking-tight text-foreground"
           aria-label="Robert Fish, home"
         >
           RF
         </Link>
-        <nav aria-label="Sections" className="flex items-center gap-4 sm:gap-6">
+        <nav aria-label="Sections" className="flex items-center gap-1 sm:gap-2">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="font-mono text-xs tracking-wide text-muted-foreground hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+              className="rounded-md px-2.5 py-1.5 font-mono text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               {link.label}
             </Link>

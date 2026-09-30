@@ -71,14 +71,14 @@ export default async function WorkPage({ params }: WorkPageProps) {
   }
 
   return (
-    <main id="content" className="mx-auto w-full max-w-3xl px-5 py-14 sm:px-6 sm:py-20">
+    <main id="content" className="shell py-14 sm:py-20">
       <Link
         href="/#work"
-        className="font-mono text-xs tracking-wide text-gold underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+        className="font-mono text-xs text-link underline-offset-4 hover:underline"
       >
         Selected work
       </Link>
-      <h1 className="mt-6 font-serif text-4xl tracking-tight text-foreground sm:text-6xl">
+      <h1 className="mt-6 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
         {study.org}
       </h1>
       <ul className="mt-4 flex flex-col gap-1">
@@ -91,30 +91,33 @@ export default async function WorkPage({ params }: WorkPageProps) {
           </li>
         ))}
       </ul>
-      <div className="mt-12 flex flex-col gap-10">
+      <div className="mt-10 flex flex-col gap-4">
         {sections.map((section) => (
-          <section key={section.key}>
-            <h2 className="font-mono text-xs tracking-[0.18em] text-gold uppercase">
+          <section
+            key={section.key}
+            className="rounded-xl border border-border bg-card p-6"
+          >
+            <h2 className="font-mono text-xs tracking-wide text-muted-foreground">
               {section.label}
             </h2>
             <div className="mt-3 flex max-w-2xl flex-col gap-4">
               {study[section.key].map((paragraph) => (
-                <p key={paragraph} className="leading-relaxed text-foreground/90">
+                <p key={paragraph} className="leading-relaxed text-foreground">
                   {paragraph}
                 </p>
               ))}
             </div>
           </section>
         ))}
-        <section>
-          <h2 className="font-mono text-xs tracking-[0.18em] text-gold uppercase">
+        <section className="rounded-xl border border-border bg-card p-6">
+          <h2 className="font-mono text-xs tracking-wide text-muted-foreground">
             Stack
           </h2>
           <ul className="mt-3 flex flex-wrap gap-2">
             {study.stack.map((item) => (
               <li
                 key={item}
-                className="border border-border px-2 py-1 font-mono text-[11px] tracking-wide text-muted-foreground"
+                className="rounded-md border border-border bg-background px-2 py-1 font-mono text-[11px] tracking-wide text-muted-foreground"
               >
                 {item}
               </li>
