@@ -1,0 +1,176 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-gold: var(--gold);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-serif: var(--font-instrument), "Iowan Old Style", Palatino, serif;
+  --font-heading: var(--font-instrument), "Iowan Old Style", Palatino, serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root,
+.dark {
+  --background: #0e1116;
+  --foreground: #e7e2d6;
+  --card: #151920;
+  --card-foreground: #e7e2d6;
+  --popover: #151920;
+  --popover-foreground: #e7e2d6;
+  --primary: #e7e2d6;
+  --primary-foreground: #0e1116;
+  --secondary: #1c212a;
+  --secondary-foreground: #e7e2d6;
+  --muted: #1c212a;
+  --muted-foreground: #b7b0a2;
+  --accent: #1c212a;
+  --accent-foreground: #e7e2d6;
+  --destructive: #e07a72;
+  --border: #2a303a;
+  --input: #2a303a;
+  --ring: #c9a227;
+  --gold: #c9a227;
+  --chart-1: #c9a227;
+  --chart-2: #b7b0a2;
+  --chart-3: #e7e2d6;
+  --chart-4: #8b8478;
+  --chart-5: #2a303a;
+  --radius: 0.25rem;
+  --sidebar: #151920;
+  --sidebar-foreground: #e7e2d6;
+  --sidebar-primary: #c9a227;
+  --sidebar-primary-foreground: #0e1116;
+  --sidebar-accent: #1c212a;
+  --sidebar-accent-foreground: #e7e2d6;
+  --sidebar-border: #2a303a;
+  --sidebar-ring: #c9a227;
+  color-scheme: dark;
+}
+
+.light {
+  --background: #f6f3ec;
+  --foreground: #1a1814;
+  --card: #efebe2;
+  --card-foreground: #1a1814;
+  --popover: #f6f3ec;
+  --popover-foreground: #1a1814;
+  --primary: #1a1814;
+  --primary-foreground: #f6f3ec;
+  --secondary: #e7e1d4;
+  --secondary-foreground: #1a1814;
+  --muted: #e7e1d4;
+  --muted-foreground: #5c564c;
+  --accent: #e7e1d4;
+  --accent-foreground: #1a1814;
+  --destructive: #9f2d2d;
+  --border: #ddd6c8;
+  --input: #ddd6c8;
+  --ring: #6e5a0c;
+  --gold: #6e5a0c;
+  --chart-1: #6e5a0c;
+  --chart-2: #5c564c;
+  --chart-3: #1a1814;
+  --chart-4: #8a8172;
+  --chart-5: #ddd6c8;
+  --sidebar: #f6f3ec;
+  --sidebar-foreground: #1a1814;
+  --sidebar-primary: #1a1814;
+  --sidebar-primary-foreground: #f6f3ec;
+  --sidebar-accent: #e7e1d4;
+  --sidebar-accent-foreground: #1a1814;
+  --sidebar-border: #ddd6c8;
+  --sidebar-ring: #6e5a0c;
+  color-scheme: light;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: #c9a227;
+    color: #0e1116;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .rise {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 22%;
+    }
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
